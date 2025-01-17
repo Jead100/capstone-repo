@@ -22,14 +22,14 @@ It is recommended to create and activate a virtual environment to isolate the pr
 
 #### On macOS/Linux:
 ```bash
-python3 -m venv myenv
-source myenv/bin/activate
+python3 -m venv <env-name>
+source <env-name>/bin/activate
 ```
 
 #### On Windows:
 ```bash
-python -m venv myenv
-myenv\Scripts\activate
+python -m venv <env-name>
+<env-name>\Scripts\activate
 ```
 
 ---
