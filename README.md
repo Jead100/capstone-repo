@@ -1,10 +1,8 @@
-Here’s a `README.md` file tailored to your Django project setup (`littlelemon`) and the instructions provided. It includes steps for setting up the virtual environment, installing dependencies, and testing the API paths:
-
 ---
 
 # LittleLemon Restaurant Project
 
-Welcome to the LittleLemon Django project! This project is a restaurant management system built using Django. Below are the instructions to set up the project locally and test the provided API endpoints.
+Welcome to the LittleLemon Django project! The Capstone project of the Back-End Developer Program. Below are the instructions to set up the project locally and test the provided API endpoints.
 
 ---
 
@@ -44,7 +42,30 @@ pip install -r requirements.txt
 
 ---
 
-### 4. Run Migrations
+### 4. Set Up MySQL Database
+This project uses MySQL as the database backend. Ensure you have MySQL installed and running on your system.
+
+1. Open the `settings.py` file in your project directory (`littlelemon/settings.py`).
+2. Locate the `DATABASES` configuration section.
+3. Replace the placeholder values with your MySQL database credentials:
+   ```python
+   DATABASES = {
+       'default': {
+           'ENGINE': 'django.db.backends.mysql',
+           'NAME': 'your_database_name',
+           'USER': 'your_mysql_username',
+           'PASSWORD': 'your_mysql_password',
+           'HOST': 'localhost',  # Or your MySQL host
+           'PORT': '3306',       # Default MySQL port
+       }
+   }
+   ```
+
+4. Save the changes.
+
+---
+
+### 5. Run Migrations
 Apply the database migrations to set up the database:
 ```bash
 python manage.py migrate
@@ -52,7 +73,7 @@ python manage.py migrate
 
 ---
 
-### 5. Run the Development Server
+### 6. Run the Development Server
 Start the Django development server:
 ```bash
 python manage.py runserver
@@ -66,17 +87,22 @@ The server will run at `http://127.0.0.1:8000/`.
 
 Here are the API paths you can test:
 
-- **Bookings API**:  
-  `GET /api/bookings/` - Retrieve a list of bookings.  
-  `POST /api/bookings/` - Create a new booking.
+### Menu API:
+- **Create a new menu item**:  
+  `POST /restaurant/menu/`
+- **Retrieve a list of menu items**:  
+  `GET /restaurant/menu/`
 
-- **Registration API**:  
-  `POST /api/registration/` - Register a new user.
+### Booking API:
+- **Make a reservation**:  
+  `POST /restaurant/booking/`
+- **Retrieve a list of reservations**:  
+  `GET /restaurant/booking/`
 
 ---
 
 ## Additional Notes
-- Ensure you have Python 3.x installed on your system.
+- Ensure you have Python 3.x and MySQL installed on your system.
 - If you encounter any issues, please refer to the Django documentation or reach out for assistance.
 
 ---
@@ -84,13 +110,3 @@ Here are the API paths you can test:
 Happy testing! 🚀
 
 ---
-
-### Explanation of the README:
-1. **Cloning the Repository**: This step ensures your peer has the project files locally.
-2. **Virtual Environment**: Encourages isolation of dependencies to avoid conflicts.
-3. **Installing Dependencies**: Uses `requirements.txt` to install all necessary packages.
-4. **Running Migrations**: Sets up the database schema.
-5. **Running the Server**: Starts the Django development server for testing.
-6. **API Endpoints**: Lists the paths your peer can test, as per your instructions.
-
-Save this content in a file named `README.md` in the root of your project directory (`littlelemon`). This will make it easy for your peer to follow the setup process and test the APIs. 😊
