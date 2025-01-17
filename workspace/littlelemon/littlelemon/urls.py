@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from restaurant import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.welcome),
     path('restaurant/', include('restaurant.urls')),
     path('auth/', include('djoser.urls')),  # Djoser authentication endpoints
     path('auth/', include('djoser.urls.authtoken')),  # Token-based authentication endpoints

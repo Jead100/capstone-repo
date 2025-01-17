@@ -5,6 +5,9 @@ from datetime import datetime
 from .models import Menu, Booking
 from .serializers import MenuSerializer, BookingSerializer
 
+def welcome(request):
+    return render(request, 'welcome.html')
+
 def index(request):
     current_year = datetime.now().year
     return render(request, 'index.html', {'current_year': current_year})
