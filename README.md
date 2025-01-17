@@ -11,7 +11,7 @@ Welcome to the LittleLemon Django project! The Capstone project of the Back-End 
 ### 1. Clone the Repository
 First, clone the repository to your local machine:
 ```bash
-git clone <repository-url>
+git clone https://github.com/Jead100/capstone-repo.git
 cd littlelemon
 ```
 
