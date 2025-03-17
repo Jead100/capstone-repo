@@ -43,8 +43,8 @@
     <h1>Welcome!</h1>
     <p>Below are the API endpoints you can test:</p>
     <ul>
-        <li><a href="/restaurant/menu/">Menu API</a> - View and create menu items.</li>
-        <li><a href="/restaurant/booking/">Booking API</a> - View and create reservations.</li>
+        <li><a href="{% url 'menu-list' %}">Menu API</a> - View and create menu items.</li>
+        <li><a href="{% url 'booking-list' %}">Booking API</a> - View and create reservations.</li>
     </ul>
     <p><strong><i>Note:</i></strong> To view menu items and reservations, create them first through POST requests. </p>
 
